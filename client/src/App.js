@@ -57,6 +57,8 @@ function App() {
 
   }
 
+  const showResult = true;
+
   return (
     <div className="EasterEgg Wrapper">
       <h2>Dice Roll Trick</h2>
@@ -65,24 +67,28 @@ function App() {
         <Dice nbr={dice2} className="dice" />
         <Dice nbr={dice3} className="dice" />
       </div>
+      <button onClick={e => rollDice()} className="btn btn-primary">Roll Dice</button>
+      <br/>
+      <hr/>
       {result && <div>
         <b>Steps:</b><br />
         <ol>
-          {line1 && <li>Multiple dice#1 by 2<br />{line1}</li>}
-          {line2 && <li>Take that number and add 5<br />{line2}</li>}
-          {line3 && <li>Take that number and multiply by 5<br />{line3}</li>}
-          {line4 && <li>Take that number and add dice#2<br />{line4}</li>}
-          {line5 && <li>Take that number and multiply by 10<br />{line5}</li>}
-          {line6 && <li>Take that number and add dice#3<br />{line6}</li>}
-          {line7 && <li>Take that number and subtract 250<br />{line7}</li>}
+          {line1 && <li>Multiply dice #1 by 2<br />{showResult && line1}</li>}
+          {line2 && <li>Take that number and add 5<br />{showResult && line2}</li>}
+          {line3 && <li>Take that number and multiply by 5<br />{showResult && line3}</li>}
+          {line4 && <li>Take that number and add dice #2<br />{showResult && line4}</li>}
+          {line5 && <li>Take that number and multiply by 10<br />{showResult && line5}</li>}
+          {line6 && <li>Take that number and add dice #3<br />{showResult && line6}</li>}
+          {showResult && line7 && <li>Take that number and subtract 250<br />{line7}</li>}
+          {!showResult && <li>Now share that number with the magician</li>}
         </ol>
       </div>
       }
 
-      {result && <div>Now, what is the answer.. {result[0]}&nbsp;{result[1]}&nbsp;{result[2]}<br />This trick works every time!<br /><br /></div>}
+      {showResult && result && <div>Now, what is the answer.. {result[0]}&nbsp;{result[1]}&nbsp;{result[2]}<br />This trick works every time!<br /><br /></div>}
 
 
-      <button onClick={e => rollDice()} className="btn btn-primary">Roll Dice</button>
+      
     </div>
   );
 }
