@@ -70,9 +70,9 @@ function App() {
         <ol>
           {line1 && <li>Multiple dice#1 by 2<br />{line1}</li>}
           {line2 && <li>Take that number and add 5<br />{line2}</li>}
-          {line3 && <li>Take that number and multiple by 5<br />{line3}</li>}
+          {line3 && <li>Take that number and multiply by 5<br />{line3}</li>}
           {line4 && <li>Take that number and add dice#2<br />{line4}</li>}
-          {line5 && <li>Take that number and multiple by 5<br />{line5}</li>}
+          {line5 && <li>Take that number and multiply by 5<br />{line5}</li>}
           {line6 && <li>Take that number and add dice#3<br />{line6}</li>}
           {line7 && <li>Take that number and subtract 250<br />{line7}</li>}
         </ol>
